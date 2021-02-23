@@ -27,12 +27,12 @@ const testData: ColumnProps[] = [
   },
 ]
 
-export default defineComponent({
+export default defineComponent ({
   name: 'App',
   components: {
     ColumnList
   },
-  setup() {
+  setup () {
     return {
       list: testData
     }
