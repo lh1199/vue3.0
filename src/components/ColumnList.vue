@@ -7,6 +7,7 @@
           <h5 class="card-title">{{column.title}}</h5>
           <p class="card-text text-left">{{column.description}}</p>
           <a class="btn btn-outline-primary" href="#">进入专栏</a>
+          <span></span>
         </div>
       </div>
     </div>
@@ -22,7 +23,7 @@ export interface ColumnProps {
   description: string;
 }
 
-export default defineComponent ({
+export default defineComponent({
   name: 'ColumnList',
   props: {
     list: {
