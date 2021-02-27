@@ -18,13 +18,15 @@ export const emitter = mitt()
 export default defineComponent({
   emits: ['form-submit'],
   setup (props, context) {
-    const funcArr: ValidateFunc[] = []
+    let funcArr: ValidateFunc[] = []
     const submitForm = () => {
-      const result = funcArr.every(func => func())
+      const result = funcArr.map(func => func()).every(result => result)
       context.emit('form-submit', result)
     }
-    const callback = (func: ValidateFunc) => {
-      funcArr.push(func)
+    const callback = (func?: ValidateFunc) => {
+      if (func) {
+        funcArr.push(func)
+      }
     }
     emitter.on('form-item-created', callback)
     onUnmounted(() => {

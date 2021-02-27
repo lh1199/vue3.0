@@ -31,17 +31,17 @@ const testData: ColumnProps[] = [{
   id: 1,
   title: 'test1的专栏',
   description: '这是test1的专栏',
-  avatar: './assets/logo.png'
+  avatar: require('@/assets/logo.png')
 }, {
   id: 2,
   title: 'test2的专栏',
   description: '这是test2的专栏',
-  avatar: './assets/logo.png'
+  avatar: require('@/assets/logo.png')
 }, {
   id: 3,
   title: 'test3的专栏',
   description: '这是test3的专栏',
-  avatar: './assets/logo.png'
+  avatar: require('@/assets/logo.png')
 }, {
   id: 4,
   title: 'test4的专栏',
@@ -58,12 +58,12 @@ export default defineComponent({
   },
   setup () {
     const inputRef = ref<any>()
-    const emailVal = ref('123@test.com')
+    const emailVal = ref('')
     const emailRules: RulesProp = [
       { type: 'required', message: '电子邮箱地址不能为空' },
       { type: 'email', message: '请输入正确的电子邮箱格式' }
     ]
-    const passwordVal = ref('123')
+    const passwordVal = ref('')
     const passwordRules: RulesProp = [
       { type: 'required', message: '密码不能为空' }
     ]
